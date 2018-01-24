@@ -7,13 +7,16 @@ commander
   .option("-u --update", "Update lerna afterward")
   .description("Add a lerna from repository or path")
   .action((url, name, opts) => {
-    mal.add(url, name, process.cwd());
-    if (opts.init || opts.update) {
-      mal.init(name);
-      if (opts.update) {
-        mal.update(name);
-        mal.link(name);
+    if (mal.add(url, name, process.cwd())) {
+      if (opts.init || opts.update) {
+        mal.init(name, null, process.cwd());
+        if (opts.update) {
+          mal.update(name, null, process.cwd());
+          mal.link(name, null, process.cwd());
+        }
       }
+    } else {
+      console.log("Failed to add " + url + " at " + name);
     }
   });
 commander
