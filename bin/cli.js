@@ -35,6 +35,7 @@ commander
       mal.init(name, null, process.cwd());
       if (opts.update) {
         mal.update(name, null, process.cwd());
+        mal.link(name, null, process.cwd());
       }
     }
   });
@@ -43,7 +44,10 @@ commander
   .description("Update already-initialized lerna [name] ")
   .action(name => {
     if (!name) mal.updateAll(process.cwd());
-    else mal.update(name, null, process.cwd());
+    else {
+      mal.update(name, null, process.cwd());
+      mal.link(name, null, process.cwd());
+    }
   });
 commander
   .command("link [name]")
