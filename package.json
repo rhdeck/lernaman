@@ -1,8 +1,7 @@
 {
   "name": "lernaman",
-  "version": "1.0.0",
-  "description":
-    "Manager for linking lerna packages/repos with app-based projects",
+  "version": "1.1.0",
+  "description": "Manager for linking lerna packages/repos with app-based projects",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/rhdeck/lernaman.git"
   },
-  "keywords": ["make-app", "lerna", "react-native"],
+  "keywords": [
+    "make-app",
+    "lerna",
+    "react-native"
+  ],
   "author": "Ray Deck",
   "license": "MIT",
   "bugs": {
