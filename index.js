@@ -37,7 +37,7 @@ function addLerna(info, name, basedir) {
         Path.resolve(basedir, "package.json"),
         JSON.stringify(p)
       );
-      return true;
+      return info;
     } catch (e) {
       return false;
     }

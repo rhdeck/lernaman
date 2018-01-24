@@ -7,12 +7,14 @@ commander
   .option("-u --update", "Update lerna afterward")
   .description("Add a lerna from repository or path")
   .action((url, name, opts) => {
-    if (mal.add(url, name, process.cwd())) {
+    const info = mal.add(url, name, process.cwd());
+    if (info) {
+      const newname = info.name;
       if (opts.init || opts.update) {
-        mal.init(name, null, process.cwd());
+        mal.init(newname, null, process.cwd());
         if (opts.update) {
-          mal.update(name, null, process.cwd());
-          mal.link(name, null, process.cwd());
+          mal.update(newname, null, process.cwd());
+          mal.link(newname, null, process.cwd());
         }
       }
     } else {
