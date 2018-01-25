@@ -207,7 +207,7 @@ module.exports = {
   add: addLerna,
   initAll: initLernas,
   updateAll: updateLernas,
-  linkApp: linkLernas,
+  linkAll: linkLernas,
   walk: walkLernas,
   link: linkLerna,
   init: initLerna,
