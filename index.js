@@ -196,7 +196,7 @@ function linkLerna(path, lerna, basedir) {
         }
         if (fs.existsSync(targetdir)) fs.unlinkSync(targetdir);
         rimraf.sync(targetdir);
-        console.log("Linking", fullpackagedir, "to", targetdir);
+        console.log("Linking", fullpackagepath, "to", targetdir);
         fs.symlinkSync(fullpackagepath, targetdir);
       });
     });
