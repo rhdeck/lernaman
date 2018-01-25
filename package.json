@@ -1,6 +1,6 @@
 {
   "name": "lernaman",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Manager for linking lerna packages/repos with app-based projects",
   "main": "index.js",
   "scripts": {
