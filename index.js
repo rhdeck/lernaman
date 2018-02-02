@@ -168,7 +168,9 @@ function updateLerna(path, lerna, basedir) {
   process.chdir(Path.join(basedir, getLernaPath(), path));
   yarnif.install();
   yarnif.exec(["lerna", "bootstrap"]);
+  yarnif.exec(["lerna", "run", "prebuild"]);
   yarnif.exec(["lerna", "run", "build"]);
+  yarnif.exec(["lerna", "run", "postbuild"]);
   yarnif.exec(["lerna", "run", "link"]);
   process.chdir(basedir);
 }
